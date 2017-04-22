@@ -41,7 +41,13 @@ public class Controller extends HttpServlet{
 		d3.setName("Nera");
 		p.setDogs(new Dog[]{d1, d2, d3});
 		
-		request.setAttribute("person", p);		
+		request.setAttribute("person", p);
+
+		java.util.Map petMap = new java.util.HashMap();
+		petMap.put("dogName", "Lili");
+		petMap.put("dogBreed", "Husky");
+		petMap.put("dogAge", 3);
+		request.setAttribute("petMap", petMap);
 		
 		RequestDispatcher view = request.getRequestDispatcher("/view.jsp");		
 		view.forward(request, response);
