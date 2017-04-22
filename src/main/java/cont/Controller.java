@@ -29,6 +29,20 @@ public class Controller extends HttpServlet{
 		String[] songList = {"Musicology", "Purple Rain", "Thieves in the temple", "Everlasting now", "Get on the boat" };
 		request.setAttribute("songList", songList);
 		
+		
+		Person p = new Person();
+		p.setName("Jelena Gavanski");
+		
+		Dog d1 = new Dog();
+		d1.setName("Lili");	
+		Dog d2 = new Dog();
+		d2.setName("Dzeki");	
+		Dog d3 = new Dog();
+		d3.setName("Nera");
+		p.setDogs(new Dog[]{d1, d2, d3});
+		
+		request.setAttribute("person", p);		
+		
 		RequestDispatcher view = request.getRequestDispatcher("/view.jsp");		
 		view.forward(request, response);
 	}

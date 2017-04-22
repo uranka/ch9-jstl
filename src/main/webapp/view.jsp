@@ -25,5 +25,16 @@
 		${status.count}. - ${song}<br/>
 	</c:forEach>
 </div>
+
+
+<div>
+	<b>Person has an array of dogs</b><br/>
+	Name of the person: ${person.name}<br/>
+	Names of the person's dogs:<br/>
+	<c:forEach var='dog' items="${person.dogs}">
+		${dog.name}<br/>
+	</c:forEach>	
+</div>
+
 </html></body>
 	
